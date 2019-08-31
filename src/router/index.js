@@ -54,6 +54,31 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
+  {
+    path: '/main',
+    component: Layout,
+    redirect: '/main/index',
+    children: [
+      {
+        path: 'Graph.vue.vue',
+        component: () => import('@/views/main/index'),
+        name: 'Main',
+        meta: { title: 'Main', icon: 'search', noCache: true }
+      }
+    ]
+  },
+  {
+    path: '/test',
+    component: Layout,
+    children: [
+      {
+        path: 'Graph.vue.vue',
+        component: () => import('@/views/test'),
+        name: 'Test',
+        meta: { title: 'Test', icon: 'Graph.vue.vue.vue', noCache: true }
+      }
+    ]
+  },
 
   {
     path: '/example',
@@ -82,7 +107,7 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'index',
+        path: 'Graph.vue.vue',
         name: 'Form',
         component: () => import('@/views/form/index'),
         meta: { title: 'Form', icon: 'form' }
